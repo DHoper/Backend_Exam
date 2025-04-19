@@ -32,3 +32,8 @@ public class MyOfficeACPDUpdate
     public string? ACPD_Memo { get; set; }
     public string? ACPD_UPDID { get; set; }
 }
+
+public class MyOfficeACPDDelete
+{
+    public string ACPD_SID { get; set; } = default!;
+}

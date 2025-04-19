@@ -35,10 +35,11 @@ public class BackendExamController : ControllerBase
     }
 
     [HttpDelete("delete")]
-    public async Task<IActionResult> Delete([FromBody] JsonElement json)
+    public async Task<IActionResult> Delete([FromBody] MyOfficeACPDDelete data)
     {
         string connStr = _config.GetConnectionString("DefaultConnection")!;
-        string result = await SqlHelper.ExecuteStoredProcedureAsync(connStr, "usp_MyOfficeACPD_Delete", json.ToString());
+        string json = JsonSerializer.Serialize(data);
+        string result = await SqlHelper.ExecuteStoredProcedureAsync(connStr, "usp_MyOfficeACPD_Delete", json);
         return Ok(result);
     }
 
