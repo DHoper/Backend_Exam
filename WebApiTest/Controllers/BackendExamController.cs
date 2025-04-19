@@ -26,7 +26,7 @@ public class BackendExamController : ControllerBase
     }
 
     [HttpPut("update")]
-    public async Task<IActionResult> Update([FromBody] MyOfficeACPDCreate data)
+    public async Task<IActionResult> Update([FromBody] MyOfficeACPDUpdate data)
     {
         string connStr = _config.GetConnectionString("DefaultConnection")!;
         string json = JsonSerializer.Serialize(data);
