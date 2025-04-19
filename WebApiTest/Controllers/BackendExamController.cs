@@ -17,7 +17,7 @@ public class BackendExamController : ControllerBase
     }
 
     [HttpPost("create")]
-    public async Task<IActionResult> Create([FromBody] MyOfficeACPD data)
+    public async Task<IActionResult> Create([FromBody] MyOfficeACPDCreate data)
     {
         string connStr = _config.GetConnectionString("DefaultConnection")!;
         string json = JsonSerializer.Serialize(data);
@@ -26,7 +26,7 @@ public class BackendExamController : ControllerBase
     }
 
     [HttpPut("update")]
-    public async Task<IActionResult> Update([FromBody] MyOfficeACPD data)
+    public async Task<IActionResult> Update([FromBody] MyOfficeACPDCreate data)
     {
         string connStr = _config.GetConnectionString("DefaultConnection")!;
         string json = JsonSerializer.Serialize(data);
