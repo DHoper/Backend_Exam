@@ -8,7 +8,6 @@ obj/
 *.cache
 *.pdb
 *.dbmdl
-*.bak
 
 ## VS Code files (if you happen to use it)
 .vscode/
